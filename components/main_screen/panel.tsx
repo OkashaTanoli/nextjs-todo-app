@@ -37,8 +37,12 @@ function Panel() {
 
     function AddTask() {
         let selected_date = new Date((date as unknown) as Date)
-        if (new Date().getTime() > new Date(selected_date).getTime() || !taskText) {
-            alert('Fill all field correctly')
+        if (!taskText) {
+            alert('Please enter task')
+            return
+        }
+        if (new Date().getTime() > new Date(selected_date).getTime()) {
+            alert("Due Time can't be less than current time")
             return
         }
         dispatch({ type: 'ADD_NEW_TODO', payload: { taskText, selected_date } })
@@ -93,7 +97,7 @@ function Panel() {
                     </div>
                 </div>
                 <div className={`${style.panel_main_block}`}>
-                    <div  className={`${style.add_new_task_block_responsive}`}>
+                    <div className={`${style.add_new_task_block_responsive}`}>
                         <button onClick={() => setOpenPopUp(true)} className={`${poppins.className}`}>ADD TASK</button>
                     </div>
                     <div className={`${style.add_task_div}`}>
