@@ -5,7 +5,7 @@ import style from './sidebar.module.css'
 import { ContextApi } from '@/store/context';
 import { IContext } from '@/types/data';
 
-import { Permanent_Marker, Josefin_Sans } from '@next/font/google'
+import { Paytone_One, Josefin_Sans } from '@next/font/google'
 
 import { MdOutlineAdd } from 'react-icons/md'
 import { VscClose } from 'react-icons/vsc'
@@ -13,7 +13,7 @@ import Categories from './siderbarcategory';
 
 
 
-const permanentmarker = Permanent_Marker({
+const paytoneone = Paytone_One({
     weight: '400',
     subsets: ['latin'],
 })
@@ -54,7 +54,7 @@ function Sidebar() {
             <div className={`${style.sideMenuOverlay} ${!state.isSideMenuOpen ? style.sideMenuClosedOverlay : style.sideMenuOpenedOverlay}`}></div>
             <div className={`${style.siderbar} ${state.isSideMenuOpen && style.sideMenuOpne}`}>
                 <div className={`${style.top}`}>
-                    <h1 className={`${permanentmarker.className}`}>Todo By Okasha</h1>
+                    <h1 className={`${paytoneone.className}`}>Todo By Okasha</h1>
                     <VscClose onClick={() => closeSideMenu()} className={`${style.close_side_menu}`} />
                 </div>
                 <div className={`${style.category_block} ${josefinsans.className}`}>
