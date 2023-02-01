@@ -17,11 +17,11 @@ export default function Categories({ dispatch, state }: IContext) {
 
 
     function EditCategory(uuid: string) {
-        if (!editText) {
-            alert('Empty Name Not Accepted')
+        if (!editText.trim()) {
+            alert('Empty Category Not Accepted')
             return
         }
-        dispatch({ type: 'UPDATE_CATEGORY', payload: { uuid, text: editText } })
+        dispatch({ type: 'UPDATE_CATEGORY', payload: { uuid, text: editText.trim() } })
         setEditName('')
         setEditText('')
     }

@@ -38,11 +38,11 @@ function Sidebar() {
     }
 
     function AddCategory() {
-        if (!addCategoryText) {
-            alert('Empty Name Not Accepted')
+        if (!addCategoryText.trim()) {
+            alert('Empty Category Not Accepted')
             return
         }
-        dispatch({ type: 'ADD_CATEGORY', payload: addCategoryText })
+        dispatch({ type: 'ADD_CATEGORY', payload: addCategoryText.trim() })
         setAddCategoryPopUP(false)
         setAddCategoryText('')
     }

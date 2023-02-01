@@ -37,7 +37,7 @@ function Panel() {
 
     function AddTask() {
         let selected_date = new Date((date as unknown) as Date)
-        if (!taskText) {
+        if (!taskText.trim()) {
             alert('Please enter task')
             return
         }
@@ -45,7 +45,7 @@ function Panel() {
             alert("Due Time can't be less than current time")
             return
         }
-        dispatch({ type: 'ADD_NEW_TODO', payload: { taskText, selected_date } })
+        dispatch({ type: 'ADD_NEW_TODO', payload: { taskText: taskText.trim(), selected_date } })
         setTaskText('')
         setOpenPopUp(false)
 
